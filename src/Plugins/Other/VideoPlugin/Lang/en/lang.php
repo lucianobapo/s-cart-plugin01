@@ -1,7 +1,8 @@
 <?php
 return [
-    'title'      => 'VideoPlugin',
+    'title'      => 'Video Plugin',
     'admin'      => [
-        'title'          => 'VideoPlugin',
+        'title'          => 'Video Plugin',
     ],
+    'VideoPluginConfigPath' => 'Path to Video files',
 ];

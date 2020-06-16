@@ -21,14 +21,14 @@
        <tbody>
 
         <tr>
-            <th width="40%">{{ trans($pathPlugin.'::lang.title') }}</th>
+            <th width="40%">{{ trans($pathPlugin.'::lang.VideoPluginConfigPath') }}</th>
             <td><a href="#" class="updateData_can_empty editable editable-click" 
                   data-name="VideoPluginConfigPath" 
                   data-type="text" 
                   data-pk="VideoPluginConfigPath" 
                   data-url="{{ route('admin_setting.update') }}" 
                   data-value="{{ sc_config('VideoPluginConfigPath') }}" 
-                  data-title="{{ trans($pathPlugin.'::lang.title') }}">
+                  data-title="{{ trans($pathPlugin.'::lang.VideoPluginConfigPath') }}">
             </a></td>
           </tr>
              
