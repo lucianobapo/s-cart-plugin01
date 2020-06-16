@@ -45,16 +45,21 @@ class Install extends Command
      */
     public function handle()
     {        
-        $this->progressBar = $this->output->createProgressBar(2);
+        $this->info($this->title." installation started. Please wait...");
+        $this->progressBar = $this->output->createProgressBar(1);
+        $this->progressBar->setMessage('Task is in progress...');
         $this->progressBar->start();
-        $this->line($this->title." installation started. Please wait...");
+        
+        //
+
+        //$this->info('Publishing files');
+        $this->callSilent('vendor:publish', ['--force' => true, '--tag' => 'erpnetVideoPlugin']);
+        
+        $this->progressBar->setMessage('Publishing files');
         $this->progressBar->advance();
 
-        $this->line(' Publishing files');
-        $this->callSilent('vendor:publish', ['--force' => true, '--tag' => 'erpnetVideoPlugin']);
-
         $this->progressBar->finish();
-        $this->line($this->title." installation finished.");
+        $this->info($this->title." installation finished.");
     }
 
 }
