@@ -31,6 +31,19 @@
                   data-title="{{ trans($pathPlugin.'::lang.VideoPluginConfigPath') }}">
             </a></td>
           </tr>
+
+          <tr>
+            <th width="40%">{{ trans($pathPlugin.'::lang.VideoPluginConfigFiles') }}</th>
+            <td><a href="#" class="fied-required editable editable-click" 
+                  data-name="VideoPluginConfigFiles" 
+                  data-type="select" 
+                  data-tpl="<select size=10></select>" 
+                  data-pk="VideoPluginConfigFiles" 
+                  data-source="{{ $jsonFiles }}" 
+                  data-value="{{ sc_config('VideoPluginConfigFiles') }}" 
+                  data-url="{{ route('admin_setting.update') }}" 
+                  data-title="{{ trans($pathPlugin.'::lang.VideoPluginConfigFiles') }}"></a></td>
+          </tr>
              
 
   </td>

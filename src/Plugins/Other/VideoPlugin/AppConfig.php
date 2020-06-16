@@ -47,7 +47,15 @@ class AppConfig extends ConfigDefault
                 'key' => 'VideoPluginConfigPath',
                 'sort' => 0, // Sort extensions in group
                 'value' => '',
-                'detail' => $this->pathPlugin.'::lang.title',
+                'detail' => $this->pathPlugin.'::lang.VideoPluginConfigPath',
+            ],
+            [
+                'group' => '',
+                'code' => 'VideoPluginConfig',
+                'key' => 'VideoPluginConfigFiles',
+                'sort' => 0, // Sort extensions in group
+                'value' => '',
+                'detail' => $this->pathPlugin.'::lang.VideoPluginConfigFiles',
             ],
         ];
 
@@ -96,7 +104,7 @@ class AppConfig extends ConfigDefault
     {
         $return = ['error' => 0, 'msg' => ''];
         //Please delete all values inserted in the installation step
-        $process = (new AdminConfig)->where('key', $this->configKey)->delete();
+        $process = (new AdminConfig)->where('key', 'like', $this->configKey.'%')->delete();
         if (!$process) {
             $return = ['error' => 1, 'msg' => 'Error when uninstall'];
         }
@@ -135,7 +143,7 @@ class AppConfig extends ConfigDefault
                 'key' => $this->configKey,
                 'title' => $this->title,
                 'pathPlugin' => $this->pathPlugin,
-                //'jsonStatusOrder' => json_encode(ShopOrderStatus::mapValue()),
+                'jsonFiles' => json_encode([]),
                 //'jsonPaymentStatus' => json_encode(ShopPaymentStatus::mapValue()),
             ]);
     }
