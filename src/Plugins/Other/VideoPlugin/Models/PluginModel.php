@@ -3,6 +3,8 @@
 namespace App\Plugins\Other\VideoPlugin\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
 
 class PluginModel extends Model
 {
