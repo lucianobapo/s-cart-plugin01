@@ -1,0 +1,11 @@
+{
+    "name": "VideoPlugin module",
+    "image": "images/logo.jpg",
+    "auth": "Luciano Porto",
+    "email": "luciano.bapo@gmail.com",
+    "link": "http://Your-link.com",
+    "configGroup": "Plugins",
+    "configCode": "Other",
+    "configKey": "VideoPlugin",
+    "version": "0.0.1"
+}
