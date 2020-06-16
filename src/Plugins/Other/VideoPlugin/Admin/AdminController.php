@@ -1,10 +1,10 @@
 <?php
-#App\Plugins\Other\TigresaTemplate\Admin\AdminController.php
+#App\Plugins\Other\VideoPlugin\Admin\AdminController.php
 
-namespace App\Plugins\Other\TigresaTemplate\Admin;
+namespace App\Plugins\Other\VideoPlugin\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Plugins\Other\TigresaTemplate\AppConfig;
+use App\Plugins\Other\VideoPlugin\AppConfig;
 
 class AdminController extends Controller
 {

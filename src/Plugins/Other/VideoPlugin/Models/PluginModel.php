@@ -1,6 +1,6 @@
 <?php
-#App\Plugins\Other\TigresaTemplate\Models\PluginModel.php
-namespace App\Plugins\Other\TigresaTemplate\Models;
+#App\Plugins\Other\VideoPlugin\Models\PluginModel.php
+namespace App\Plugins\Other\VideoPlugin\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

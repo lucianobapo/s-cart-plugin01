@@ -2,15 +2,15 @@
 /**
  * Route front
  */
-if(sc_config('TigresaTemplate')) {
+if(sc_config('VideoPlugin')) {
 Route::group(
     [
-        'prefix'    => 'plugin/tigresatemplate',
-        'namespace' => 'App\Plugins\Other\TigresaTemplate\Controllers',
+        'prefix'    => 'plugin/videoplugin',
+        'namespace' => 'App\Plugins\Other\VideoPlugin\Controllers',
     ],
     function () {
-        Route::get('paypal', 'FrontController@index')
-        ->name('tigresatemplate.index');
+        Route::get('index', 'FrontController@index')
+        ->name('videoplugin.index');
     }
 );
 }
@@ -19,12 +19,12 @@ Route::group(
  */
 Route::group(
     [
-        'prefix' => SC_ADMIN_PREFIX.'/tigresatemplate',
+        'prefix' => SC_ADMIN_PREFIX.'/videoplugin',
         'middleware' => SC_ADMIN_MIDDLEWARE,
-        'namespace' => 'App\Plugins\Other\TigresaTemplate\Admin',
+        'namespace' => 'App\Plugins\Other\VideoPlugin\Admin',
     ], 
     function () {
         Route::get('/', 'AdminController@index')
-        ->name('admin_tigresatemplate.index');
+        ->name('admin_videoplugin.index');
     }
 );

@@ -1,7 +1,7 @@
 <?php
 return [
-    'title'      => 'TigresaTemplate',
+    'title'      => 'VideoPlugin',
     'admin'      => [
-        'title'          => 'TigresaTemplate',
+        'title'          => 'VideoPlugin',
     ],
 ];

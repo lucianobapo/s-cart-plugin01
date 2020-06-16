@@ -2,10 +2,10 @@
 /**
  * Format plugin for S-Cart 2.x
  */
-#App\Plugins\Other\TigresaTemplate\AppConfig.php
-namespace App\Plugins\Other\TigresaTemplate;
+#App\Plugins\Other\VideoPlugin\AppConfig.php
+namespace App\Plugins\Other\VideoPlugin;
 
-use App\Plugins\Other\TigresaTemplate\Models\PluginModel;
+use App\Plugins\Other\VideoPlugin\Models\PluginModel;
 use App\Models\AdminConfig;
 use App\Plugins\ConfigDefault;
 class AppConfig extends ConfigDefault
