@@ -45,27 +45,14 @@ class Install extends Command
      */
     public function handle()
     {
-        //
-        //$this->info(" Backpack\Base installation started. Please wait...");
+        
         $this->progressBar = $this->output->createProgressBar(2);
         $this->progressBar->start();
         $this->info($this->title." installation started. Please wait...");
         $this->progressBar->advance();
 
         $this->line(' Publishing files');
-        $this->executeProcess([
-            'php',
-            'artisan',
-            'vendor:publish',
-            '--force',
-            '--provider="'.$this->provider.'"',
-            ]);
-
-        //$this->line(' Configuring files');
-        //$this->executeProcess('chmod +x permissions.sh');
-
-        //$this->line(' Start files');
-        //$this->executeProcess('./permissions.sh');
+        $this->callSilent('vendor:publish', ['--tag' => 'erpnetVideoPlugin']);
 
         $this->progressBar->finish();
         $this->info($this->title." installation finished.");

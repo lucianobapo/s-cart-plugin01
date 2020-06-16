@@ -25,7 +25,7 @@ class TServiceProvider extends ServiceProvider
         $this->publishes([
             $projectRootDir.'src/public/Plugins/Other/VideoPlugin' => public_path('Plugins/Other/VideoPlugin'),
             $projectRootDir.'src/Plugins/Other/VideoPlugin' => app_path('Plugins/Other/VideoPlugin'),         
-        ], 'erpnet');
+        ], 'erpnetVideoPlugin');
 
     }
 
