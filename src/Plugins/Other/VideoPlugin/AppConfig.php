@@ -32,6 +32,26 @@ class AppConfig extends ConfigDefault
 
     public function install()
     {
+        $config = [
+            [
+                'group' => $this->configGroup,
+                'code' => $this->configCode,
+                'key' => $this->configKey,
+                'sort' => 0,
+                'value' => self::ON, //Enable extension
+                'detail' => $this->pathPlugin.'::lang.title',
+            ],
+            [
+                'group' => '',
+                'code' => 'VideoPluginConfig',
+                'key' => 'VideoPluginConfigPath',
+                'sort' => 0, // Sort extensions in group
+                'value' => '',
+                'detail' => $this->pathPlugin.'::lang.title',
+            ],
+        ];
+
+
         $return = ['error' => 0, 'msg' => ''];
         $check = AdminConfig::where('key', $this->configKey)->first();
         if ($check) {
@@ -39,16 +59,7 @@ class AppConfig extends ConfigDefault
             $return = ['error' => 1, 'msg' => 'Plugin exist'];
         } else {
             //Insert plugin to config
-            $process = AdminConfig::insert(
-                [
-                    'group' => $this->configGroup,
-                    'code' => $this->configCode,
-                    'key' => $this->configKey,
-                    'sort' => 0,
-                    'value' => self::ON, //Enable extension
-                    'detail' => $this->pathPlugin.'::lang.title',
-                ]
-            );
+            $process = AdminConfig::insert($config);
 
             /*Insert plugin's html elements into index of admin pages*/
 
@@ -118,7 +129,15 @@ class AppConfig extends ConfigDefault
     public function config()
     {
         //redirect to url config of plugin
-        return redirect(route('admin_videoplugin.index'));
+        return view($this->pathPlugin . '::Admin')->with(
+            [
+                'code' => $this->configCode,
+                'key' => $this->configKey,
+                'title' => $this->title,
+                'pathPlugin' => $this->pathPlugin,
+                //'jsonStatusOrder' => json_encode(ShopOrderStatus::mapValue()),
+                //'jsonPaymentStatus' => json_encode(ShopPaymentStatus::mapValue()),
+            ]);
     }
 
     public function getData()
