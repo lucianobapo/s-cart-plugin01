@@ -118,7 +118,7 @@ class AppConfig extends ConfigDefault
     public function config()
     {
         //redirect to url config of plugin
-        return;
+        return redirect(route('admin_videoplugin.index'));
     }
 
     public function getData()
